@@ -20,7 +20,7 @@ export function ConfirmCode() {
                         </div>
 
                         <div className="flex flex-col w-full h-3/5 mt-8 lg:mt-15">
-                            <input type="text" inputMode="numeric" pattern="[0-9]*" maxLength={6} placeholder="000000" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" />
+                            <input name="code_verification" type="text" inputMode="numeric" pattern="[0-9]*" maxLength={6} placeholder="000000" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required />
                             <button type="submit" className="h-10 mt-10 rounded-md bg-linear-100 from-blue-500 to-orange-500 text-white font-bold cursor-pointer">Enviar</button>
                         </div>
                     </div>
