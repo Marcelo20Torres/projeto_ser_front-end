@@ -38,25 +38,25 @@ export function RegisterPage () {
                                     <div className="flex w-full gap-3">
                                         <div className="flex flex-col flex-1">
                                             <span className="font-bold">Nome</span>
-                                            <input name="name" type="text" placeholder="Jailson" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
+                                            <input name="username" type="text" placeholder="jailsonmendes" minLength={6} className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
                                         </div>
 
                                         <div className="flex flex-col flex-1">
                                             <span className="font-bold">Sobrenome</span>
-                                            <input type="text" placeholder="Mendes" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
+                                            <input type="text" placeholder="Mendes" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" disabled/>
                                         </div>
                                     </div>
 
                                     <div className="flex flex-col mt-8">
                                         <span className="font-bold">E-mail</span>
-                                        <input name="email" type="email" placeholder="seu@email.com" className="bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
+                                        <input name="useremail" type="email" placeholder="seu@email.com" className="bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
                                     </div>
                                     
                                     <div className="flex w-full gap-3 mt-8">
                                         <div className="flex flex-col flex-1">
                                             <span className="font-bold">Senha</span>
                                             <div className="relative">
-                                                <input name="password" id="senha" type="password" placeholder="••••••••" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
+                                                <input name="userpassword" id="senha" type="password" placeholder="••••••••" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
                                                 <button type='button' onClick={() => toggleSenha("senha")} className='absolute right-3 top-3/5 -translate-y-1/2 z-10 cursor-pointer'>
                                                     <Eye size={20} color='gray'/>
                                                 </button>
@@ -66,7 +66,7 @@ export function RegisterPage () {
                                         <div className="flex flex-col flex-1">
                                             <span className="font-bold">Confirmar</span>
                                             <div className="relative">
-                                                <input id="confsenha" type="password" placeholder="••••••••" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
+                                                <input name="confirmPassword" id="confsenha" type="password" placeholder="••••••••" className="w-full bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required/>
                                                 <button type='button' onClick={() => toggleSenha("confsenha")} className='absolute right-3 top-3/5 -translate-y-1/2 z-10 cursor-pointer'>
                                                     <Eye size={20} color='gray'/>
                                                 </button>

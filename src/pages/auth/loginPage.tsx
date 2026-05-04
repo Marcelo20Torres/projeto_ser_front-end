@@ -35,12 +35,12 @@ export function LoginPage () {
 
                         <div className="flex flex-col w-full h-3/5 mt-8 lg:mt-15">
                             <span className="font-bold">E-mail</span>
-                            <input type="email" placeholder="seu@email.com" className="bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" />
+                            <input name="useremail" type="email" placeholder="seu@email.com" className="bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3" required />
 
                             <div className="flex flex-col mt-8">
                                 <span className="font-bold">Senha</span>
                                 <div className='relative'>
-                                    <input id='senha' type="password" placeholder="••••••••" className="bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3 w-full pr-10" />
+                                    <input name="userpassword" id='senha' type="password" placeholder="••••••••" className="bg-gray-100 mt-2 border border-gray-200 rounded-md h-10 px-3 w-full pr-10" required />
                                     <button type='button' onClick={toggleSenha} className='absolute right-3 top-3/5 -translate-y-1/2 z-10 cursor-pointer'>
                                         <Eye size={20} color='gray'/>
                                     </button>
