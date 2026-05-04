@@ -1,5 +1,4 @@
 import { Bell, Sidebar, User } from "lucide-react";
-import type React from "react";
 
 type HeadbarProps = {
     onToggleSidebar: () => void;

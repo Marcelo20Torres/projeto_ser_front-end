@@ -52,7 +52,7 @@ const Sidebar:  React.FC = () => {
 
                 <nav className="flex flex-col gap-3 mt-3">
                     <div>
-                        <a href="#" className="flex p-1 items-center gap-2 hover:bg-gray-300 rounded">
+                        <a href="/finance" className="flex p-1 items-center gap-2 hover:bg-gray-300 rounded">
                             <DollarSign size={20} /> Financeiro
                         </a>
                     </div>
