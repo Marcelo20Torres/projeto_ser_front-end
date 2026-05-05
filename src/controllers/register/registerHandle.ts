@@ -2,6 +2,11 @@ import type { FormEvent } from "react";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
+type GenerateCodeResponse = {
+  status?: string;
+  message?: string;
+};
+
 export default async function handleRegister(e: FormEvent<HTMLFormElement>) {
   e.preventDefault();
 
@@ -31,13 +36,25 @@ export default async function handleRegister(e: FormEvent<HTMLFormElement>) {
       },
     );
 
-    if (!response.ok) {
-      throw new Error("Falha ao gerar código de verificação.");
+    const data = (await response.json().catch(() => null)) as GenerateCodeResponse | null;
+
+    if (!response.ok || data?.status !== "success") {
+      const errorMessage = data?.message ?? "Falha ao gerar código de verificação.";
+      throw new Error(errorMessage);
+    }
+
+    if (data.message) {
+      alert(data.message);
     }
 
     window.location.href = "/confirm-code";
   } catch (error) {
     console.error("Erro ao enviar código:", error);
-    alert("Não foi possível enviar o código de verificação.");
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : "Não foi possível enviar o código de verificação.";
+
+    alert(errorMessage);
   }
 }
