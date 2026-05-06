@@ -1,4 +1,5 @@
 import type { FormEvent } from "react";
+import { toast } from "sonner";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
@@ -52,6 +53,6 @@ export default async function handleConfirm(e: FormEvent<HTMLFormElement>) {
     window.location.href = "/login";
   } catch (error) {
     console.error("Erro ao confirmar cadastro:", error);
-    alert("Não foi possível concluir o cadastro. Verifique o código e tente novamente.");
+    toast.error("Não foi possível concluir o cadastro. Verifique o código e tente novamente.");
   }
 }

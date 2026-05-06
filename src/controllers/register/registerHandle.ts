@@ -1,4 +1,5 @@
 import type { FormEvent } from "react";
+import { toast } from "sonner";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
@@ -55,6 +56,6 @@ export default async function handleRegister(e: FormEvent<HTMLFormElement>) {
         ? error.message
         : "Não foi possível enviar o código de verificação.";
 
-    alert(errorMessage);
+    toast.error(errorMessage)
   }
 }

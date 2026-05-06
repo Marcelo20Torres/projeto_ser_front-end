@@ -1,4 +1,5 @@
 import type { FormEvent } from "react";
+import { toast } from "sonner";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
@@ -26,9 +27,9 @@ export default async function handleLogin(e: FormEvent<HTMLFormElement>) {
 
     const data = await response.json();
     sessionStorage.setItem("accessToken", data.access_token);
-    window.location.href = "/";
+    window.location.href = "/dashboard";
   } catch (error) {
     console.error("Erro no login:", error);
-    alert("Não foi possível realizar login.");
+    toast.error("E-mail ou senha inválidos!");
   }
 }

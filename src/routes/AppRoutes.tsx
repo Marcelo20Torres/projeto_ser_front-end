@@ -1,5 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+import { Toaster } from "sonner";
+
 import AthletesPage from '../pages/AthletesPage';
 import FinancePage from '../pages/FinancePage';
 import DashboardPage from '../pages/DashboardPage'
@@ -11,19 +13,22 @@ import { ConfirmCode } from '../pages/auth/confirmCode';
 
 export function AppRoutes() {
     return (
-        <Routes>
-            <Route path="/" element={<Navigate to="/login" replace />} />
-            <Route path='/login' element={<LoginPage />}/>
-            <Route path='/register' element={<RegisterPage />}/>
-            <Route path='/confirm-code' element={<ConfirmCode />}/>
-            
-            <Route element={<ProtectedLayout />}>
-                <Route element={<AppLayout />}>
-                    <Route path="/dashboard" element={<DashboardPage />} />
-                    <Route path="/athletes" element={<AthletesPage />} />
-                    <Route path="/finance" element={<FinancePage />}/>
+        <>
+            <Toaster position='top-right' richColors />
+            <Routes>
+                <Route path="/" element={<Navigate to="/login" replace />} />
+                <Route path='/login' element={<LoginPage />}/>
+                <Route path='/register' element={<RegisterPage />}/>
+                <Route path='/confirm-code' element={<ConfirmCode />}/>
+                
+                <Route element={<ProtectedLayout />}>
+                    <Route element={<AppLayout />}>
+                        <Route path="/dashboard" element={<DashboardPage />} />
+                        <Route path="/athletes" element={<AthletesPage />} />
+                        <Route path="/finance" element={<FinancePage />}/>
+                    </Route>
                 </Route>
-            </Route>
-        </Routes>
+            </Routes>
+        </>
     )
 }
